@@ -105,10 +105,10 @@ InputManager:
     m_Name: Mouse Y
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    negativeButton: w
+    positiveButton: s
+    altNegativeButton: w
+    altPositiveButton: s
     gravity: 3
     dead: 0.1
     sensitivity: 3
@@ -123,8 +123,8 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton: e
+    altPositiveButton: r
     gravity: 3
     dead: 0.1
     sensitivity: 3
