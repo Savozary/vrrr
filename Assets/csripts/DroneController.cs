@@ -19,11 +19,11 @@ public class DroneController : MonoBehaviour
         transform.Rotate(0, rotateHorizontal * rotationSpeed * Time.deltaTime, 0);
 
         // Контроль высоты
-        if (Input.GetKey(KeyCode.JoystickButton0)) // Кнопка A
+        if (Input.GetButton("Fire1")) // Кнопка A
         {
             transform.Translate(0, liftSpeed * Time.deltaTime, 0); // Подъем
         }
-        if (Input.GetKey(KeyCode.JoystickButton1)) // Кнопка B
+        if (Input.GetButton("Fire2")) // Кнопка B
         {
             transform.Translate(0, -liftSpeed * Time.deltaTime, 0); // Спуск
         }
