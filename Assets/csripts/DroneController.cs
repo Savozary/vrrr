@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class DroneController : MonoBehaviour
 {
@@ -24,8 +25,8 @@ public class DroneController : MonoBehaviour
         }
 
         // Вращение
-        float rotateHorizontal = Input.GetAxis("Mouse X"); // Замените на оси контроллера
-        float rotateVertical = Input.GetAxis("Mouse Y");   // Замените на оси контроллера
+        float rotateHorizontal = Input.GetAxis("Rotate1"); // Замените на оси контроллера
+        float rotateVertical = Input.GetAxis("Rotate2");   // Замените на оси контроллера
         transform.Rotate(rotateVertical, rotateHorizontal, 0);
     }
 }
