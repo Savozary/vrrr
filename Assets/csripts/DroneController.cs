@@ -2,30 +2,30 @@ using UnityEngine;
 
 public class DroneController : MonoBehaviour
 {
-    public float speed = 5f;        // Скорость движения
-    public float liftSpeed = 3f;    // Скорость подъёма
-    public float rotationSpeed = 100f; // Скорость вращения
+    public float speed = 5f;          // Скорость перемещения
+    public float verticalSpeed = 3f;  // Скорость вертикального движения
 
     void Update()
     {
-        // Движение дрона
-        float moveHorizontal = Input.GetAxis("Horizontal"); // Левый джойстик
-        float moveVertical = Input.GetAxis("Vertical");     // Левый джойстик
+        // Движение дрона по X и Z
+        float moveHorizontal = Input.GetAxis("Horizontal"); // Левый джойстик (влево-вправо)
+        float moveVertical = Input.GetAxis("Vertical");     // Левый джойстик (вперед-назад)
         Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
         transform.Translate(movement * speed * Time.deltaTime, Space.World);
 
-        // Вращение дрона
-        float rotateHorizontal = Input.GetAxis("Rotate"); // Правый джойстик
-        transform.Rotate(0, rotateHorizontal * rotationSpeed * Time.deltaTime, 0);
+        // Вертикальное движение (вверх и вниз)
+        if (Input.GetButton("Fire1")) // Кнопка A (можно изменить на вашу кнопку)
+        {
+            transform.Translate(Vector3.up * verticalSpeed * Time.deltaTime);
+        }
+        else if (Input.GetButton("Fire2")) // Кнопка B (можно изменить на вашу кнопку)
+        {
+            transform.Translate(Vector3.down * verticalSpeed * Time.deltaTime);
+        }
 
-        // Контроль высоты
-        if (Input.GetButton("Fire1")) // Кнопка A
-        {
-            transform.Translate(0, liftSpeed * Time.deltaTime, 0); // Подъем
-        }
-        if (Input.GetButton("Fire2")) // Кнопка B
-        {
-            transform.Translate(0, -liftSpeed * Time.deltaTime, 0); // Спуск
-        }
+        // Вращение
+        float rotateHorizontal = Input.GetAxis("Mouse X"); // Замените на оси контроллера
+        float rotateVertical = Input.GetAxis("Mouse Y");   // Замените на оси контроллера
+        transform.Rotate(rotateVertical, rotateHorizontal, 0);
     }
 }
