@@ -32,11 +32,11 @@ public class MenuController : MonoBehaviour
 
     void OpenInfo()
     {
-        SceneManager.LoadScene("InfoScene"); // ”кажите им€ сцены с информацией
+        SceneManager.LoadScene("info"); // ”кажите им€ сцены с информацией
     }
 
     void BackToMenu()
     {
-        SceneManager.LoadScene("MenuScene"); // ”кажите им€ сцены меню
+        SceneManager.LoadScene("Menu"); // ”кажите им€ сцены меню
     }
 }
